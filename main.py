@@ -140,24 +140,12 @@ def test_get_longest_all_primes():
     assert get_longest_all_primes([34]) == []
 
 
-
-def printMenu():
-    print("1. Citire lista")
-    print("2. Afisare cea mai lunga subsecventa de numere consecutive ce au semne alternate")
-    print("3. Afisare cea mai lunga subsecventa de numere ce contin doar cifre prime")
-    print("4. Iesire")
-
-    print("4. Afisare cea mai lunga subsecventa formata doar din numere prime")
-    print("5. Iesire")
-
-
-
-    def citireLista():
-        l = []
-        n = int(input("Dati nr. de elemente: "))
-        for i in range(n):
-            l.append(int(input("l[" + str(i) + "]=")))
-        return l
+def citireLista():
+    l = []
+    n = int(input("Dati nr. de elemente: "))
+    for i in range(n):
+        l.append(int(input("l[" + str(i) + "]=")))
+    return l
 
 
 def main():
@@ -166,8 +154,13 @@ def main():
     test_get_longest_all_primes()
     l = []
     while True:
-        printMenu()
-    optiune = input("Dati optiunea: ")
+        print("1. Citire lista")
+        print("2. Afisare cea mai lunga subsecventa de numere consecutive ce au semne alternate")
+        print("3. Afisare cea mai lunga subsecventa de numere ce contin doar cifre prime")
+        print("4. Afisare cea mai lunga subsecventa formata doar din numere prime")
+        print("5. Iesire")
+        print("a. Afisare lista")
+        optiune = input("Dati optiunea: ")
         if optiune == "1":
             l = citireLista()
         elif optiune == "2":
@@ -178,7 +171,10 @@ def main():
             print(get_longest_all_primes(l))
         elif optiune == "5":
             break
+        elif optiune == "a":
+            print(l)
         else:
             print("Optiune gresita! Reincercati!")
 
+if __name__ == "__main__":
     main()
